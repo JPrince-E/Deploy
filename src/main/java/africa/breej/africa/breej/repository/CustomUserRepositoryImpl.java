@@ -1,7 +1,7 @@
 package africa.breej.africa.breej.repository;
 
 import africa.breej.africa.breej.model.auth.UserReport;
-import africa.breej.africa.breej.model.user.User;
+import africa.breej.africa.breej.model.auth.User;
 import com.mongodb.client.AggregateIterable;
 import com.mongodb.client.MongoCollection;
 import lombok.extern.slf4j.Slf4j;

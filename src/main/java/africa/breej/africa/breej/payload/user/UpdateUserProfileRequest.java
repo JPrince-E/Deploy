@@ -1,11 +1,11 @@
 package africa.breej.africa.breej.payload.user;
 
-import africa.breej.africa.breej.model.user.Gender;
+import africa.breej.africa.breej.model.auth.Gender;
+import africa.breej.africa.breej.model.auth.Role;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter

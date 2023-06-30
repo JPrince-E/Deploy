@@ -1,4 +1,4 @@
-package africa.breej.africa.breej.model.user;
+package africa.breej.africa.breej.model.auth;
 
 public enum Gender {
     MALE,

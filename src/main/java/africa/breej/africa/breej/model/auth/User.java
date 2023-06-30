@@ -1,9 +1,8 @@
-package africa.breej.africa.breej.model.user;
+package africa.breej.africa.breej.model.auth;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
-import africa.breej.africa.breej.model.auth.AuthProvider;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
@@ -33,6 +32,9 @@ public class User {
 
     @NotNull
     private AuthProvider provider;
+
+    @NotNull
+    private Role role;
 
     @NotNull
     private Gender gender;

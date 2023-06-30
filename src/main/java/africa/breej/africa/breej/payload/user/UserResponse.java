@@ -1,5 +1,7 @@
 package africa.breej.africa.breej.payload.user;
 
+import africa.breej.africa.breej.model.auth.Gender;
+import africa.breej.africa.breej.model.auth.Role;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,7 +35,9 @@ public class UserResponse {
 
     private String faculty;
 
-    private String gender;
+    private Gender gender;
+
+    private Role role;
 
     private String yearOfEntry;
 
