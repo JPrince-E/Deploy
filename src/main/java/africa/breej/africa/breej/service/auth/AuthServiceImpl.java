@@ -116,6 +116,15 @@ public class AuthServiceImpl implements AuthService {
         return new AuthResponse(token, userResponse);
     }
 
+
+    public AuthResponse logoutUser(String id) {
+        User user = new User();
+        UserResponse userResponse =  getUserResponseFromUser(user);
+        String token = "";
+        SecurityContextHolder.clearContext();
+        return new AuthResponse(token, userResponse);
+    }
+
     public Optional<User> findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
