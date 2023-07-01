@@ -1,4 +1,4 @@
-package africa.breej.africa.breej.payload.user;
+package africa.breej.africa.breej.payload.tutor;
 
 import africa.breej.africa.breej.model.auth.Gender;
 import africa.breej.africa.breej.model.auth.Role;
@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserResponse {
+public class TutorResponse {
 
     private  String id;
 
@@ -29,20 +29,9 @@ public class UserResponse {
 
     private String phoneNumber;
 
-    private String courseOfStudy;
-
-    private String department;
-
-    private String faculty;
+    private String specialty;
 
     private Gender gender;
 
     private Role role;
-
-    private String yearOfEntry;
-
-    private String level;
-
-    private String cgpa;
-
 }

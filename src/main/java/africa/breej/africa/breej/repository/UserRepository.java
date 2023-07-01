@@ -1,6 +1,6 @@
 package africa.breej.africa.breej.repository;
 
-import africa.breej.africa.breej.model.user.User;
+import africa.breej.africa.breej.model.auth.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;

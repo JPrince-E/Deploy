@@ -1,10 +1,11 @@
 package africa.breej.africa.breej.service.auth;
 
-import africa.breej.africa.breej.model.user.User;
+import africa.breej.africa.breej.model.auth.Role;
+import africa.breej.africa.breej.model.auth.User;
 import africa.breej.africa.breej.model.auth.AuthProvider;
-import africa.breej.africa.breej.payload.auth.AuthResponse;
-import africa.breej.africa.breej.payload.auth.LoginRequest;
-import africa.breej.africa.breej.payload.auth.SignUpRequest;
+import africa.breej.africa.breej.payload.auth.userauth.AuthResponse;
+import africa.breej.africa.breej.payload.auth.userauth.LoginRequest;
+import africa.breej.africa.breej.payload.auth.userauth.SignUpRequest;
 import africa.breej.africa.breej.payload.user.UserResponse;
 import africa.breej.africa.breej.repository.UserRepository;
 import africa.breej.africa.breej.security.TokenProvider;
@@ -65,6 +66,7 @@ public class AuthServiceImpl implements AuthService {
         user.setEmail(signUpRequest.getEmail());
         user.setPhoneNumber(signUpRequest.getPhoneNumber());
         user.setProvider(AuthProvider.LOCAL);
+        user.setRole(Role.ROLE_USER);
         user.setTimeCreated(LocalDateTime.now());
 
         user.setPassword(passwordEncoder.encode(signUpRequest.getPassword()));
@@ -110,7 +112,16 @@ public class AuthServiceImpl implements AuthService {
         UserResponse userResponse =  getUserResponseFromUser(user);
         updateLastLogin(user);
 
-        String token = passwordEncoder.encode(user.getEmail());
+        String token = passwordEncoder.encode(user.getPhoneNumber());
+        return new AuthResponse(token, userResponse);
+    }
+
+
+    public AuthResponse logoutUser(String id) {
+        User user = new User();
+        UserResponse userResponse =  getUserResponseFromUser(user);
+        String token = "";
+        SecurityContextHolder.clearContext();
         return new AuthResponse(token, userResponse);
     }
 

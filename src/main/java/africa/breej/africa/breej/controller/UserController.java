@@ -3,10 +3,7 @@ package africa.breej.africa.breej.controller;
 import africa.breej.africa.breej.exception.ConflictException;
 import africa.breej.africa.breej.exception.NotAcceptableException;
 import africa.breej.africa.breej.exception.NotFoundException;
-import africa.breej.africa.breej.model.auth.AuthProvider;
-import africa.breej.africa.breej.model.auth.UserOverview;
-import africa.breej.africa.breej.model.user.Gender;
-import africa.breej.africa.breej.model.user.User;
+import africa.breej.africa.breej.model.auth.*;
 import africa.breej.africa.breej.payload.Response;
 import africa.breej.africa.breej.payload.user.UpdateUserPasswordRequest;
 import africa.breej.africa.breej.payload.user.UpdateUserProfileRequest;
@@ -99,6 +96,7 @@ public class UserController {
             @RequestParam(value = "level", required = false) final String level,
             @RequestParam(value = "provider", required = false) final AuthProvider provider,
             @RequestParam(value = "providerId", required = false) final String providerId,
+            @RequestParam(value = "role", required = false) final Role role,
             @RequestParam(value = "sort", defaultValue = "timeCreated") final List<String> sort,
             @RequestParam(value = "direction", defaultValue = "DESC") final Sort.Direction direction
     ) {
@@ -153,6 +151,10 @@ public class UserController {
 
         if (provider!=null) {
             filters.put("provider", provider.name());
+        }
+
+        if (role!=null) {
+            filters.put("role", role.name());
         }
 
 
