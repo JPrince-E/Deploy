@@ -1,14 +1,14 @@
-package africa.breej.africa.breej.payload.auth;
-
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+package africa.breej.africa.breej.payload.auth.tutorauth;
 
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
 @Getter
 @Setter
-public class LoginRequest {
+public class TutorLoginRequest {
 
     @Email
     private String email;

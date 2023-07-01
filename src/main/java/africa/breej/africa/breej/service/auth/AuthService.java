@@ -2,9 +2,9 @@ package africa.breej.africa.breej.service.auth;
 
 
 import africa.breej.africa.breej.model.auth.User;
-import africa.breej.africa.breej.payload.auth.AuthResponse;
-import africa.breej.africa.breej.payload.auth.LoginRequest;
-import africa.breej.africa.breej.payload.auth.SignUpRequest;
+import africa.breej.africa.breej.payload.auth.userauth.AuthResponse;
+import africa.breej.africa.breej.payload.auth.userauth.LoginRequest;
+import africa.breej.africa.breej.payload.auth.userauth.SignUpRequest;
 
 import java.net.URI;
 import java.util.Optional;

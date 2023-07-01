@@ -7,7 +7,7 @@ import africa.breej.africa.breej.exception.ResourceNotFoundException;
 import africa.breej.africa.breej.model.auth.UserOverview;
 import africa.breej.africa.breej.model.auth.UserReport;
 import africa.breej.africa.breej.model.auth.User;
-import africa.breej.africa.breej.payload.auth.SignUpRequest;
+import africa.breej.africa.breej.payload.auth.userauth.SignUpRequest;
 import africa.breej.africa.breej.payload.user.UpdateUserPasswordRequest;
 import africa.breej.africa.breej.payload.user.UpdateUserProfileRequest;
 import africa.breej.africa.breej.repository.UserRepository;

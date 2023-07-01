@@ -1,4 +1,4 @@
-package africa.breej.africa.breej.payload.user;
+package africa.breej.africa.breej.payload.tutor;
 
 import africa.breej.africa.breej.model.auth.Gender;
 import lombok.Getter;
@@ -8,7 +8,7 @@ import javax.validation.constraints.Email;
 
 @Getter
 @Setter
-public class UpdateUserProfileRequest {
+public class UpdateTutorProfileRequest {
 
     private String firstName;
 
@@ -21,20 +21,8 @@ public class UpdateUserProfileRequest {
 
     private String phoneNumber;
 
-    private String courseOfStudy;
-
-    private String department;
-
-    private String faculty;
-
-    private String nameOfSchool;
-
     private Gender gender;
 
-    private String yearOfEntry;
-
-    private String level;
-
-    private String cgpa;
+    private String specialty;
 
 }

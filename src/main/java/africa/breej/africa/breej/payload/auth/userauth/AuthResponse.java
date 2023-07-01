@@ -1,4 +1,4 @@
-package africa.breej.africa.breej.payload.auth;
+package africa.breej.africa.breej.payload.auth.userauth;
 
 import africa.breej.africa.breej.payload.user.UserResponse;
 import lombok.Getter;

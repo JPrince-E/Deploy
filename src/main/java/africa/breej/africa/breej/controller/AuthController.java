@@ -1,9 +1,9 @@
 package africa.breej.africa.breej.controller;
 
 import africa.breej.africa.breej.payload.Response;
-import africa.breej.africa.breej.payload.auth.AuthResponse;
-import africa.breej.africa.breej.payload.auth.LoginRequest;
-import africa.breej.africa.breej.payload.auth.SignUpRequest;
+import africa.breej.africa.breej.payload.auth.userauth.AuthResponse;
+import africa.breej.africa.breej.payload.auth.userauth.LoginRequest;
+import africa.breej.africa.breej.payload.auth.userauth.SignUpRequest;
 import africa.breej.africa.breej.security.CurrentUser;
 import africa.breej.africa.breej.security.TokenProvider;
 import africa.breej.africa.breej.security.UserPrincipal;
