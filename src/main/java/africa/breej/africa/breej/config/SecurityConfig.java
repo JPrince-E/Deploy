@@ -30,11 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("/api/v1/auth/**").permitAll() // Allow access to sign up endpoint without authentication
                 .antMatchers("/api/v1/user/**")
                 .permitAll()
-                    .anyRequest().permitAll() // Require authentication for all other endpoints
-                    .and()
-                .formLogin()
-                .and()
-                .logout();
+                    .anyRequest().permitAll();
 
         // Disable CSRF protection for simplicity (you may want to enable it in production)
         http.csrf().disable();
