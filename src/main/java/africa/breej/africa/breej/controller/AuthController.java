@@ -60,4 +60,9 @@ public class AuthController {
         AuthResponse authResponse = authService.logoutUser(userPrincipal.getId());
         return ResponseEntity.ok(authResponse);
     }
+
+    @GetMapping("/hello")
+    public String sayHello() {
+        return "Hello, World!";
+    }
 }
