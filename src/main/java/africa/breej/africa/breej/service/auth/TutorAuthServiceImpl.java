@@ -11,10 +11,9 @@ import africa.breej.africa.breej.repository.TutorRepository;
 import africa.breej.africa.breej.security.JwtAuthenticationToken;
 import africa.breej.africa.breej.security.TokenProvider;
 import africa.breej.africa.breej.util.StringUtil;
-import com.amazonaws.services.alexaforbusiness.model.UnauthorizedException;
-import org.apache.commons.beanutils.BeanUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -96,7 +95,7 @@ public class TutorAuthServiceImpl implements TutorAuthService{
 
         if(tutorLoginRequest.getEmail()!=null && !tutorLoginRequest.getEmail().isEmpty())  {
             if(!tutorRepository.existsByEmailAndDeleted(tutorLoginRequest.getEmail(),false)) {
-                throw new UnauthorizedException("Unauthenticated.");
+                throw new NotAcceptableStatusException("Unauthenticated.");
             }
 //            authentication = authenticationManager.authenticate(
 //                    new UsernamePasswordAuthenticationToken(
@@ -109,7 +108,7 @@ public class TutorAuthServiceImpl implements TutorAuthService{
 
         if(tutorLoginRequest.getPhoneNumber()!=null && !tutorLoginRequest.getPhoneNumber().isEmpty()){
             if(!tutorRepository.existsByPhoneNumber(tutorLoginRequest.getPhoneNumber())) {
-                throw new UnauthorizedException("Unauthenticated.");
+                throw new NotAcceptableStatusException("Unauthenticated.");
             }
 //            authentication = authenticationManager.authenticate(
 //                    new UsernamePasswordAuthenticationToken(

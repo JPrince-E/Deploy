@@ -1,8 +1,8 @@
 package africa.breej.africa.breej.service.auth;
 
+import africa.breej.africa.breej.model.auth.AuthProvider;
 import africa.breej.africa.breej.model.auth.Role;
 import africa.breej.africa.breej.model.auth.User;
-import africa.breej.africa.breej.model.auth.AuthProvider;
 import africa.breej.africa.breej.payload.auth.userauth.AuthResponse;
 import africa.breej.africa.breej.payload.auth.userauth.LoginRequest;
 import africa.breej.africa.breej.payload.auth.userauth.SignUpRequest;
@@ -10,10 +10,9 @@ import africa.breej.africa.breej.payload.user.UserResponse;
 import africa.breej.africa.breej.repository.UserRepository;
 import africa.breej.africa.breej.security.TokenProvider;
 import africa.breej.africa.breej.util.StringUtil;
-import com.amazonaws.services.alexaforbusiness.model.UnauthorizedException;
-import org.apache.commons.beanutils.BeanUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -84,7 +83,7 @@ public class AuthServiceImpl implements AuthService {
         Authentication authentication=null;
         if(loginRequest.getEmail()!=null && !loginRequest.getEmail().isEmpty())  {
             if(!userRepository.existsByEmailAndDeleted(loginRequest.getEmail(),false)) {
-                throw new UnauthorizedException("Unauthenticated.");
+                throw new NotAcceptableStatusException("Unauthenticated.");
             }
             authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
@@ -96,7 +95,7 @@ public class AuthServiceImpl implements AuthService {
 
         if(loginRequest.getPhoneNumber()!=null && !loginRequest.getPhoneNumber().isEmpty()){
             if(!userRepository.existsByPhoneNumber(loginRequest.getPhoneNumber())) {
-                throw new UnauthorizedException("Unauthenticated.");
+                throw new NotAcceptableStatusException("Unauthenticated.");
             }
             authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
