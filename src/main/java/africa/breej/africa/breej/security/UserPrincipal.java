@@ -1,15 +1,15 @@
 package africa.breej.africa.breej.security;
 
 
-import java.util.Collection;
-import java.util.Map;
-
 import africa.breej.africa.breej.model.auth.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 
-public class UserPrincipal implements OAuth2User, UserDetails {
+import java.util.Collection;
+import java.util.Map;
+//import org.springframework.security.oauth2.core.user.OAuth2User;
+
+public class UserPrincipal implements /*OAuth2User,*/ UserDetails {
     private String id;
     private String email;
     private String phoneNumber;
@@ -86,7 +86,7 @@ public class UserPrincipal implements OAuth2User, UserDetails {
         return null;
     }
 
-    @Override
+//    @Override
     public Map<String, Object> getAttributes() {
         return attributes;
     }
@@ -95,7 +95,7 @@ public class UserPrincipal implements OAuth2User, UserDetails {
         this.attributes = attributes;
     }
 
-    @Override
+//    @Override
     public String getName() {
         return String.valueOf(id);
     }

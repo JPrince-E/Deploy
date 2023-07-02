@@ -55,11 +55,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.amazonaws</groupId>
-			<artifactId>aws-java-sdk-elasticache</artifactId>
-			<version>1.12.262</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.amazonaws</groupId>-->
+<!--			<artifactId>aws-java-sdk-elasticache</artifactId>-->
+<!--			<version>1.12.262</version>-->
+<!--		</dependency>-->
 <!--		<dependency>-->
 <!--			<groupId>com.project.huzz</groupId>-->
 <!--			<artifactId>Backend</artifactId>-->
@@ -92,11 +92,11 @@
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-oauth2-core</artifactId>
-			<version>6.0.3</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.security</groupId>-->
+<!--			<artifactId>spring-security-oauth2-core</artifactId>-->
+<!--			<version>6.0.3</version>-->
+<!--		</dependency>-->
 
 	</dependencies>
 
